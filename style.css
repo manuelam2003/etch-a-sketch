@@ -1,30 +1,44 @@
-:root {
-  --primary-dark: #333;
-  --primary-light: #ededed;
-  --secondary-light: #fefefe;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
+* {
   margin: 0;
 }
 
-#container {
-  display: inline-grid;
-  width: 960px;
-  height: 960px;
-  margin: 20px;
-  border: 1px solid black;
+body {
+  background-color: #ededed;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
 }
 
-.grid-item {
+header {
+  padding: 30px 0;
+}
+
+h1 {
+  line-height: 1.2;
   text-align: center;
+  font-size: 80px;
+}
+
+#main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
   align-items: center;
+  width: 100%;
+}
+
+#side-menu {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* text-align: center; */
+  align-items: stretch;
+  width: 300px;
 }
 
 button,
@@ -38,20 +52,9 @@ input {
   outline: none;
 }
 
-/* body {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-} */
-
-#side-menu {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* text-align: center; */
-  align-items: stretch;
-  width: 300px;
+button.active {
+    background-color: #333;
+    color: #ededed;
 }
 
 #color-picker,
@@ -60,15 +63,36 @@ input {
   text-align: center;
 }
 
-h1 {
-  line-height: 1.2;
+button:hover,
+input[type="color"]:hover {
+  transform: scale(1.05);
 }
 
-body {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-  /* footer support */
-  margin-bottom: 100px;
+#container {
+  display: inline-grid;
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.grid-item {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin-top: 100px;
 }

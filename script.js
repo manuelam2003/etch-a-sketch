@@ -6,6 +6,9 @@ const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
 output.innerHTML = slider.value;
 const fill = document.querySelector("#fill");
+const eraser = document.querySelector("#eraser");
+const colorBtn = document.querySelector("#colorbtn");
+const rainbow = document.querySelector("#rainbow");
 
 function makeGrid(numDivs) {
   numCells = numDivs ** 2;
@@ -35,17 +38,6 @@ function etchSketch(color = "black") {
   });
 }
 
-function sizeBtnf() {
-  sizeBtn.addEventListener("click", () => {
-    do {
-      var size = prompt("Desired size?");
-    } while (size < 1 || size > 64);
-    clearGrid();
-    makeGrid(size);
-    etchSketch();
-  });
-}
-
 function clearBtnf() {
   clearBtn.addEventListener("click", () => {
     clearGrid();
@@ -66,11 +58,26 @@ slider.oninput = function () {
   etchSketch();
 };
 
+selectedColor = "black";
+
 colorPicker.oninput = function () {
-  etchSketch(this.value);
+  etchSketch('#ededed')
 };
 
+colorBtn.onclick = function () {
+  etchSketch(colorPicker.value);
+};
+
+
 fill.onclick = () => fillGrid();
+
+eraser.onclick = () => {
+  document.querySelectorAll(".grid-item").forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      item.style.backgroundColor = "#ededed";
+    });
+  });
+};
 
 makeGrid(16);
 clearBtnf();
