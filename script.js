@@ -1,6 +1,5 @@
 const container = document.querySelector("#container");
 let divs = document.querySelectorAll(".grid-item");
-const sizeBtn = document.querySelector("#size");
 const clearBtn = document.querySelector("#clear");
 const colorPicker = document.querySelector("#color-picker");
 const slider = document.getElementById("myRange");
