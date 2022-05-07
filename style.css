@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: inline-grid;
+    width: 960px;
+    height: 960px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.grid-item {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 20px;
+    border-radius: 8px;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#side-menu {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* text-align: center; */
+    align-items: stretch;
+    width: 300px;
+}
+
+#color-picker, .slidecontainer {
+    align-self: center;
+    text-align: center;
+}
